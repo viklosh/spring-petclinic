@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
+import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.githubConnection
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 /*
@@ -29,6 +30,15 @@ version = "2020.2"
 project {
 
     buildType(Build)
+
+    features {
+        githubConnection {
+            id = "PROJECT_EXT_3"
+            displayName = "GitHub.com"
+            clientId = "cc73cc60d4304194db28"
+            clientSecret = "credentialsJSON:26bf7e39-05cf-4c30-b0e7-427e8189ad36"
+        }
+    }
 }
 
 object Build : BuildType({
